@@ -1,5 +1,3 @@
-CREATE SCHEMA bookstore;
-ALTER DATABASE bookstore SET search_path = bookstore, public;
 CREATE TABLE bookstore.authors(
   author_id serial PRIMARY KEY,
   last_name text,
