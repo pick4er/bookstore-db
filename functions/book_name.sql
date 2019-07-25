@@ -12,4 +12,4 @@ SELECT
 FROM bookstore.authors a
 JOIN bookstore.authorship ash ON a.author_id = ash.author_id
 WHERE ash.book_id = book_name.book_id;
-$$ STABLE LANGUAGE sql;
+$$ STABLE LANGUAGE SQL;
