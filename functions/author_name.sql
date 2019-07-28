@@ -4,11 +4,11 @@ CREATE OR REPLACE FUNCTION author_name(
   , middle_name text) 
 RETURNS text
 AS $$
-SELECT 
-  last_name || ' ' ||
-  left(first_name, 1) || '.' ||
-  CASE WHEN middle_name != ''
-    THEN ' ' || left(middle_name, 1) || '.'
-    ELSE ''
-  END;
-$$ IMMUTABLE LANGUAGE sql;
+  SELECT 
+    last_name || ' ' ||
+    left(first_name, 1) || '.' ||
+    CASE WHEN middle_name != ''
+      THEN ' ' || left(middle_name, 1) || '.'
+      ELSE ''
+    END;
+$$ IMMUTABLE LANGUAGE SQL;
