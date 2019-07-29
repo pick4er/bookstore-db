@@ -9,3 +9,8 @@ BEGIN
   RETURN NEW;
 END;
 $$ VOLATILE LANGUAGE plpgsql;
+
+CREATE TRIGGER update_onhand_qty_trigger
+BEFORE INSERT ON bookstore.operations
+FOR EACH ROW
+EXECUTE PROCEDURE bookstore.update_onhand_qty();

@@ -15,9 +15,4 @@ ALTER TABLE bookstore.books ALTER COLUMN onhand_qty SET DEFAULT 0;
 ALTER TABLE bookstore.books ALTER COLUMN onhand_qty SET NOT NULL;
 ALTER TABLE bookstore.books ADD CHECK(onhand_qty >= 0);
 
-CREATE TRIGGER update_onhand_qty_trigger
-BEFORE INSERT ON bookstore.operations
-FOR EACH ROW
-EXECUTE PROCEDURE bookstore.update_onhand_qty();
-
 COMMIT;
