@@ -5,6 +5,9 @@ SELECT
   author_name(
     a.last_name
     , a.first_name
-    , a.middle_name) AS display_name
+    , a.middle_name) AS display_name,
+  a.last_name,
+  a.first_name,
+  a.middle_name
 FROM bookstore.authors a
 ORDER BY display_name;
